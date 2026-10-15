@@ -1,0 +1,5 @@
+#app {
+  min-height: 100dvh;
+  position: relative;
+  padding: var(--space-4);
+}
