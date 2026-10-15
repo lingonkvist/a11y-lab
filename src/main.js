@@ -1,6 +1,8 @@
 import './styles/reset.css'
 import './styles/tokens.css'
 import './styles/base.css'
+import './styles/layout.css'
+import { createComponentPanel } from './components/ComponentsPanel'
 
-const app = document.querySelector('#app')
-app.innerHTML = '<h1>a11y lab</h1>'
+const panel = document.querySelector(".components-panel")
+panel.append(createComponentPanel())
