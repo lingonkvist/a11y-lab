@@ -1,7 +1,10 @@
 import './ComponentsPanel.css'
+import { ButtonComponent } from './ButtonComponent'
 import githubLogoRaw from '../assets/images/github-logo.svg?raw'
 
-const placeholderComponents = ['Button', 'Card']
+const registry = [
+  { name: 'Button', Component: ButtonComponent }
+]
 
 /**
  * Creates a components panel.
@@ -32,9 +35,15 @@ function createComponentList() {
   const ul = document.createElement('ul')
   ul.className = 'components-list'
 
-  placeholderComponents.forEach((component) => {
+  registry.forEach(({ name, Component }) => {
     const li = document.createElement('li')
-    li.textContent = component
+    li.textContent = name
+    li.addEventListener('pointerdown', () => {
+      const component = new Component()
+      document.dispatchEvent(new CustomEvent('component:select', {
+        detail: { component }
+      }))
+    })
     ul.append(li)
   })
 

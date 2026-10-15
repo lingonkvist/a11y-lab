@@ -34,6 +34,7 @@
   font-size: var(--text-item);
   font-weight: var(--weight-medium);
   padding: var(--space-2) var(--space-3);
+  cursor: pointer;
 }
 
 .panel-footer {
