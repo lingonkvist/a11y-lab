@@ -3,7 +3,8 @@ import { ButtonComponent } from './ButtonComponent'
 import githubLogoRaw from '../assets/images/github-logo.svg?raw'
 
 const registry = [
-  { name: 'Button', Component: ButtonComponent }
+  { name: 'Button', Component: ButtonComponent },
+  { name: 'Card', Component: ButtonComponent },
 ]
 
 /**
@@ -39,13 +40,21 @@ function createComponentList() {
     const li = document.createElement('li')
     li.textContent = name
     li.addEventListener('pointerdown', () => {
+      ul.querySelector('.active')?.classList.remove('active')
+      li.classList.add('active')
+
       const component = new Component()
-      document.dispatchEvent(new CustomEvent('component:select', {
-        detail: { component }
-      }))
+      document.dispatchEvent(
+        new CustomEvent('component:select', {
+          detail: { component },
+        })
+      )
     })
     ul.append(li)
   })
+
+  const firstItem = ul.querySelector('li')
+  firstItem?.dispatchEvent(new PointerEvent('pointerdown'))
 
   return ul
 }

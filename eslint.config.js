@@ -21,7 +21,7 @@ export default [
           },
           publicOnly: true,
           checkGetters: false,
-          checkSetters: false
+          checkSetters: false,
         },
       ],
     },

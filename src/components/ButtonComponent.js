@@ -1,4 +1,4 @@
-import { Component } from "./Component";
+import { Component } from './Component'
 
 /**
  * Represents a button component.
@@ -6,6 +6,8 @@ import { Component } from "./Component";
 export class ButtonComponent extends Component {
   #text
   #borderRadius
+  #fontSize
+  #fontWeight
 
   /**
    * Creates an instance of ButtonComponent.
@@ -14,14 +16,16 @@ export class ButtonComponent extends Component {
    */
   constructor(properties = {}) {
     super({
-      foregroundColor: '#b6ecf7',
-      backgroundColor: '#00a2c7',
+      foregroundColor: '#FFFFFF',
+      backgroundColor: '#045468',
       width: 120,
-      height: 40,
-      ...properties
+      height: 44,
+      ...properties,
     })
     this.#text = properties.text ?? 'Button'
     this.#borderRadius = properties.borderRadius ?? 4
+    this.#fontSize = properties.fontSize ?? 16
+    this.#fontWeight = properties.fontWeight ?? 400
   }
 
   /**
@@ -38,7 +42,8 @@ export class ButtonComponent extends Component {
     button.style.height = `${this.height}px`
     button.style.border = 'none'
     button.style.borderRadius = `${this.#borderRadius}px`
-    button.style.fontSize = 'inherit'
+    button.style.fontSize = `${this.#fontSize}px`
+    button.style.fontWeight = `${this.#fontWeight}`
     button.style.cursor = 'pointer'
 
     return button
