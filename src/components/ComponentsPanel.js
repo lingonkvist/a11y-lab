@@ -32,7 +32,7 @@ function createComponentList() {
   const ul = document.createElement('ul')
   ul.className = 'components-list'
 
-  placeholderComponents.forEach(component => {
+  placeholderComponents.forEach((component) => {
     const li = document.createElement('li')
     li.textContent = component
     ul.append(li)

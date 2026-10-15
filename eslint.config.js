@@ -20,6 +20,8 @@ export default [
             ClassDeclaration: true,
           },
           publicOnly: true,
+          checkGetters: false,
+          checkSetters: false
         },
       ],
     },
