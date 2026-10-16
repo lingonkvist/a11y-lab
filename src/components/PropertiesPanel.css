@@ -9,17 +9,27 @@
   box-shadow: var(--shadow-panel);
 }
 
-.panel-content {
+.properties-panel .panel-content {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
   padding: var(--space-4);
 }
 
-.panel-title {
+.properties-panel .panel-content .panel-title {
   font-size: var(--text-micro);
   font-weight: var(--weight-medium);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
+  color: var(--text-secondary);
+}
+
+.property-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.property-fields label {
   color: var(--text-secondary);
 }

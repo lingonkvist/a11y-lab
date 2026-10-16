@@ -9,14 +9,14 @@
   box-shadow: var(--shadow-panel);
 }
 
-.panel-content {
+.components-panel .panel-content {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
   padding: var(--space-4);
 }
 
-.panel-title {
+.components-panel .panel-title {
   font-size: var(--text-micro);
   font-weight: var(--weight-medium);
   text-transform: uppercase;
@@ -73,7 +73,7 @@
   stroke: currentColor;
 }
 
-.panel-footer {
+.components-panel .panel-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,13 +82,13 @@
   border-top: 1px solid var(--border-subtle);
 }
 
-.panel-footer .app-name {
+.components-panel .panel-footer .app-name {
   font-size: var(--text-micro);
   font-weight: var(--weight-medium);
   color: var(--text-secondary);
 }
 
-.panel-footer a {
+.components-panel .panel-footer a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,21 +98,21 @@
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.panel-footer a:hover {
+.components-panel .panel-footer a:hover {
   color: var(--text-primary);
 }
 
-.panel-footer a span {
+.components-panel .panel-footer a span {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.panel-footer a span svg {
+.components-panel .panel-footer a span svg {
   max-width: 20px;
   max-height: 20px;
 }
 
-.panel-footer a span svg path {
+.components-panel .panel-footer a span svg path {
   fill: currentColor;
 }
