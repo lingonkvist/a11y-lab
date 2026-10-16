@@ -48,4 +48,37 @@ export class ButtonComponent extends Component {
 
     return button
   }
+
+  get editableProperties() {
+    return [
+      ...super.editableProperties,
+      { key: 'borderRadius', label: 'Border Radius', type: 'number', min: 0, max: 999 },
+      { key: 'fontSize', label: 'Font Size', type: 'number', min: 9, max: 72 },
+      { key: 'fontWeight', label: 'Font Weight', type: 'number', min: 100, max: 900 }
+    ]
+  }
+
+  get borderRadius() {
+    return this.#borderRadius
+  }
+
+  set borderRadius(value) {
+    this.#borderRadius = value
+  }
+
+  get fontSize() {
+    return this.#fontSize
+  }
+
+  set fontSize(value) {
+    this.#fontSize = value
+  }
+
+  get fontWeight() {
+    return this.#fontWeight
+  }
+
+  set fontWeight(value) {
+    this.#fontWeight = value
+  }
 }

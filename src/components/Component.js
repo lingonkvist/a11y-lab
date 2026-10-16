@@ -33,6 +33,15 @@ export class Component {
     throw new Error('Subclasses must implement buildComponent()')
   }
 
+  get editableProperties() {
+    return [
+      { key: 'backgroundColor', label: 'Background', type: 'color' },
+      { key: 'foregroundColor', label: 'Foreground', type: 'color' },
+      { key: 'width', label: 'Width', type: 'number', min: 24, max: 800 },
+      { key: 'height', label: 'Height', type: 'number', min: 24, max: 200 },
+    ]
+  }
+
   get backgroundColor() {
     return this.#backgroundColor
   }

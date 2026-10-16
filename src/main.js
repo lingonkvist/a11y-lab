@@ -2,10 +2,14 @@ import './styles/reset.css'
 import './styles/tokens.css'
 import './styles/base.css'
 import './styles/layout.css'
-import { createCanvas } from './components/Canvas'
+import { renderCanvas } from './components/Canvas'
 import { createComponentPanel } from './components/ComponentsPanel'
+import { createPropertiesPanel } from './components/PropertiesPanel'
 
-createCanvas()
+renderCanvas()
 
-const panel = document.querySelector('.components-panel')
-panel.append(createComponentPanel())
+const componentsPanel = document.querySelector('.components-panel')
+componentsPanel.append(createComponentPanel())
+
+const propertiesPanel = document.querySelector('.properties-panel')
+propertiesPanel.append(createPropertiesPanel())

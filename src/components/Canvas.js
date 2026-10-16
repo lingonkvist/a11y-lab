@@ -1,13 +1,16 @@
 import './Canvas.css'
 
 /**
- * Creates a canvas.
+ * Creates and updates the canvas.
  */
-export function createCanvas() {
+export function renderCanvas() {
   const main = document.querySelector('main')
 
-  document.addEventListener('component:select', (e) => {
+  const render = (e) => {
     const { component } = e.detail
     main.replaceChildren(component.buildComponent())
-  })
+  }
+
+  document.addEventListener('component:select', render)
+  document.addEventListener('component:update', render)
 }

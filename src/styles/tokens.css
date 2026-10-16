@@ -104,10 +104,9 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
 
-  --text-micro: 0.75rem; /* section headers, badges */
-  --text-small: 0.8125rem; /* labels, values */
-  --text-body: 0.875rem; /* body, buttons, list items */
-  --text-item: 0.9375rem; /* primary list items */
+  --text-micro: 0.75rem; /* 12px, section headers, badges */
+  --text-small: 0.8125rem; /* 13px, labels, values */
+  --text-body: 0.875rem; /* 14px, body, buttons, list items */
   --text-base: 1rem;
 
   --weight-regular: 400;
@@ -116,6 +115,10 @@
 
   --leading-tight: 1.2;
   --leading-base: 1.5;
+
+  --tracking-tight: -0.011em; /* headings, large text */
+  --tracking-normal: 0; /* body, inputs, list items */
+  --tracking-wide: 0.08em; /* uppercase labels */
 
   /* ============================================================
    * SPACING
