@@ -1,7 +1,4 @@
 .components-panel {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
   width: 240px;
   min-height: 400px;
   display: flex;
@@ -20,8 +17,10 @@
 }
 
 .panel-title {
-  font-size: var(--text-item);
-  font-weight: var(--weight-semibold);
+  font-size: var(--text-micro);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   color: var(--text-secondary);
 }
 
@@ -38,7 +37,9 @@
   align-items: center;
   padding: 0 var(--space-4);
   border-radius: var(--radius-md);
+  font-size: var(--text-body);
   font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-normal);
   color: var(--text-secondary);
   cursor: pointer;
 }
@@ -55,11 +56,12 @@
 .components-list li::before {
   content: '';
   position: absolute;
-  left: 1px;
+  top: 20%;
+  left: 0px;
   width: 2px;
-  height: 90%;
+  height: 60%;
   background-color: var(--accent-solid);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   opacity: 0;
 }
 
@@ -83,7 +85,6 @@
 .panel-footer .app-name {
   font-size: var(--text-micro);
   font-weight: var(--weight-medium);
-  letter-spacing: 0.05em;
   color: var(--text-secondary);
 }
 

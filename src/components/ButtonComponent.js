@@ -54,7 +54,7 @@ export class ButtonComponent extends Component {
       ...super.editableProperties,
       { key: 'borderRadius', label: 'Border Radius', type: 'number', min: 0, max: 999 },
       { key: 'fontSize', label: 'Font Size', type: 'number', min: 9, max: 72 },
-      { key: 'fontWeight', label: 'Font Weight', type: 'number', min: 100, max: 900 }
+      { key: 'fontWeight', label: 'Font Weight', type: 'number', min: 100, max: 900 },
     ]
   }
 
