@@ -36,3 +36,43 @@ button:not(:disabled),
 [role='button']:not(:disabled) {
   cursor: pointer;
 }
+
+input {
+  background: var(--surface-input);
+  color: var(--text-primary);
+  padding: var(--space-1) var(--space-2);
+  outline: none;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-sm);
+}
+
+input:focus {
+  outline: 2px solid var(--border-strong);
+}
+
+input[data-error] {
+  border: 1px solid var(--failure-9);
+}
+
+.field-error {
+  display: flex;
+  justify-content: center;
+  font-size: var(--text-micro);
+  font-weight: var(--weight-medium);
+  color: var(--failure-11);
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.panel-title {
+  font-size: var(--text-micro);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-tertiary);
+}

@@ -9,21 +9,6 @@
   box-shadow: var(--shadow-panel);
 }
 
-.properties-panel .panel-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-4);
-}
-
-.properties-panel .panel-content .panel-title {
-  font-size: var(--text-micro);
-  font-weight: var(--weight-medium);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
-  color: var(--text-tertiary);
-}
-
 .property-fields {
   display: flex;
   flex-direction: column;
@@ -38,16 +23,8 @@
 
 .property-fields label {
   font-size: var(--text-body);
-  font-weight: var(--weight-small);
+  font-weight: var(--weight-medium);
   color: var(--text-secondary);
-}
-
-.property-fields input {
-  color: var(--text-primary);
-  background: var(--surface-input);
-  border: 1px solid var(--border-input);
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-sm);
 }
 
 input[type='number']::-webkit-inner-spin-button,
@@ -59,18 +36,6 @@ input[type='number']::-webkit-outer-spin-button {
 input[type='number'] {
   appearance: textfield;
   -moz-appearance: textfield;
-}
-
-input[data-error] {
-  outline: 1px solid var(--failure-9);
-}
-
-.field-error {
-  display: flex;
-  justify-content: center;
-  font-size: var(--text-micro);
-  font-weight: var(--weight-medium);
-  color: var(--failure-11);
 }
 
 .color-input-group {
