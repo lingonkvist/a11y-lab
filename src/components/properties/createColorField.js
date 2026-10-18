@@ -1,9 +1,11 @@
+import { createFieldValidator } from "./createFieldValidator.js"
+
 /**
  * Creates a property field for color input.
  *
  * @param {object} property - The property.
- * @param {number} currentValue - Current property value.
- * @param {function(number): void} onChange - Called with the new value on input.
+ * @param {string} currentValue - Current property value.
+ * @param {function(string): void} onChange - Called with the new value on input.
  * @returns {HTMLElement} Property field.
  */
 export function createColorField(property, currentValue, onChange) {
@@ -12,6 +14,10 @@ export function createColorField(property, currentValue, onChange) {
 
   const label = document.createElement('label')
   label.textContent = property.label
+
+  const validate = createFieldValidator(property)
+  const error = document.createElement('span')
+  error.className = 'field-error'
 
   const colorInput = document.createElement('input')
   colorInput.type = 'color'
@@ -25,16 +31,25 @@ export function createColorField(property, currentValue, onChange) {
   textInput.type = 'text'
   textInput.value = currentValue
   textInput.addEventListener('input', () => {
-    if (/^#[0-9a-f]{6}$/i.test(textInput.value)) {
-      colorInput.value = textInput.value
-      onChange(textInput.value)
+    const result = validate(textInput.value)
+    if (result !== null) {
+      error.textContent = result
+      textInput.setAttribute('data-error', true)
+    } else {
+      error.textContent = ''
+      textInput.removeAttribute('data-error')
+      if (/^#[0-9a-f]{6}$/i.test(textInput.value)) {
+        colorInput.value = textInput.value
+        onChange(textInput.value)
+      }
     }
   })
 
-  const error = document.createElement('span')
-  error.className = 'field-error'
+  const inputGroup = document.createElement('div')
+  inputGroup.className = 'color-input-group'
+  inputGroup.append(colorInput, textInput)
 
-  field.append(label, colorInput, textInput, error)
+  field.append(label, inputGroup, error)
 
   return field
 }

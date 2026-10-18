@@ -1,3 +1,5 @@
+import { createFieldValidator } from "./createFieldValidator.js"
+
 /**
  * Creates a property field for number input.
  *
@@ -13,17 +15,26 @@ export function createNumberField(property, currentValue, onChange) {
   const label = document.createElement('label')
   label.textContent = property.label
 
+  const validate = createFieldValidator(property)
+  const error = document.createElement('span')
+  error.className = 'field-error'
+
   const input = document.createElement('input')
   input.type = 'number'
   input.value = currentValue
   input.addEventListener('input', () => {
-    onChange(Number(input.value))
+    const result = validate(input.value)
+    if (result !== null) {
+      error.textContent = result
+      input.setAttribute('data-error', true)
+    } else {
+      error.textContent = ''
+      input.removeAttribute('data-error')
+      onChange(Number(input.value))
+    }
   })
   if (property.min !== undefined) input.min = property.min
   if (property.max !== undefined) input.max = property.max
-
-  const error = document.createElement('span')
-  error.className = 'field-error'
 
   field.append(label, input, error)
 
