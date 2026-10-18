@@ -1,4 +1,4 @@
-import { createFieldValidator } from "./createFieldValidator.js"
+import { createFieldValidator } from './createFieldValidator.js'
 
 /**
  * Creates a property field for color input.

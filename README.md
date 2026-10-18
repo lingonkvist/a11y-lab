@@ -16,6 +16,10 @@ a11y lab is a web app for developers and UX designers to build accessible UI com
 8. The user can see target size results live (2.5.5, 2.5.8).
 9. The user can export the component's CSS.
 
+## Installation
+
+a11y lab depends on [form-validation](https://github.com/Fielifia/form-validation), which must be cloned manually into `lib/form-validation`. All other dependencies install via `npm install`.
+
 ## Contributing
 
 Bug reports and feature requests are welcome via [GitHub Issues](https://github.com/lingonkvist/a11y-lab/issues).
