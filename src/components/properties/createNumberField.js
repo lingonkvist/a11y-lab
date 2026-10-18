@@ -1,12 +1,13 @@
 import { createFieldValidator } from './createFieldValidator.js'
+import { attachCommitBehavior } from './attachCommitBehavior.js'
 
 /**
  * Creates a property field for number input.
  *
- * @param {object} property - The property.
- * @param {number} currentValue - Current property value.
- * @param {function(number): void} onChange - Called with the new value on input.
- * @returns {HTMLElement} Property field.
+ * @param {object} property - Property with key, label, type, and constraints.
+ * @param {number} currentValue - The value to display initially.
+ * @param {function(number): void} onChange - Called with the committed value on Enter or blur.
+ * @returns {HTMLElement} A labeled input field with validation and commit-on-Enter/blur behavior.
  */
 export function createNumberField(property, currentValue, onChange) {
   const field = document.createElement('div')
@@ -22,17 +23,8 @@ export function createNumberField(property, currentValue, onChange) {
   const input = document.createElement('input')
   input.type = 'number'
   input.value = currentValue
-  input.addEventListener('input', () => {
-    const result = validate(input.value)
-    if (result !== null) {
-      error.textContent = result
-      input.setAttribute('data-error', true)
-    } else {
-      error.textContent = ''
-      input.removeAttribute('data-error')
-      onChange(Number(input.value))
-    }
-  })
+
+  attachCommitBehavior({ input, error, validate, onChange: (value) => onChange(Number(value)) })
   if (property.min !== undefined) input.min = property.min
   if (property.max !== undefined) input.max = property.max
 

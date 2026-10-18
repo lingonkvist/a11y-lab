@@ -6,7 +6,7 @@ import { RequiredRule, MinValueRule, MaxValueRule, MaxLengthRule } from '../../.
  * Creates a field validator for a property.
  *
  * @param {object} property - The property to create a validator for.
- * @returns {function(string): (string|null)} Validator function that returns the first error message, or null if valid.
+ * @returns {function(string): (string|null)} Validator function that returns the first error message or null if valid.
  */
 export function createFieldValidator(property) {
   const validation = new Validation()

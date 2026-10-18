@@ -9,9 +9,10 @@ const fieldBuilders = {
 }
 
 /**
- * Creates property fields.
+ * Creates a container that renders editable property fields for the selected component.
+ * Listens for 'component:select' events and rebuilds the fields accordingly.
  *
- * @returns {HTMLElement} A container with fields.
+ * @returns {HTMLElement} A container that updates its fields on component selection.
  */
 export function createPropertyFields() {
   const container = document.createElement('div')
@@ -24,6 +25,9 @@ export function createPropertyFields() {
   return container
 }
 
+/**
+ * Clears the container and creates a field for each editable property of the component.
+ */
 function renderFields(container, component) {
   container.replaceChildren()
 
@@ -35,8 +39,7 @@ function renderFields(container, component) {
     }
 
     const onChange = (newValue) => {
-      const value = newValue
-      component[property.key] = value
+      component[property.key] = newValue
       document.dispatchEvent(
         new CustomEvent('component:update', {
           detail: { component },

@@ -1,12 +1,13 @@
 import { createFieldValidator } from './createFieldValidator.js'
+import { attachCommitBehavior } from './attachCommitBehavior.js'
 
 /**
  * Creates a property field for color input.
  *
- * @param {object} property - The property.
- * @param {string} currentValue - Current property value.
- * @param {function(string): void} onChange - Called with the new value on input.
- * @returns {HTMLElement} Property field.
+ * @param {object} property - Property with key, label, type, and constraints.
+ * @param {string} currentValue - The value to display initially.
+ * @param {function(string): void} onChange - Called with the committed value on Enter or blur.
+ * @returns {HTMLElement} A labeled input field with validation and commit-on-Enter/blur behavior.
  */
 export function createColorField(property, currentValue, onChange) {
   const field = document.createElement('div')
@@ -30,19 +31,13 @@ export function createColorField(property, currentValue, onChange) {
   const textInput = document.createElement('input')
   textInput.type = 'text'
   textInput.value = currentValue
-  textInput.addEventListener('input', () => {
-    const result = validate(textInput.value)
-    if (result !== null) {
-      error.textContent = result
-      textInput.setAttribute('data-error', true)
-    } else {
-      error.textContent = ''
-      textInput.removeAttribute('data-error')
-      if (/^#[0-9a-f]{6}$/i.test(textInput.value)) {
-        colorInput.value = textInput.value
-        onChange(textInput.value)
+  attachCommitBehavior({
+    input: textInput, error, validate, onChange: (value => {
+      if (/^#[0-9a-f]{6}$/i.test(value)) {
+        colorInput.value = value
       }
-    }
+      onChange(value)
+    })
   })
 
   const inputGroup = document.createElement('div')
