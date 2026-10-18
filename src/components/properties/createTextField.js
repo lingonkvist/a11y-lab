@@ -1,4 +1,4 @@
-import { createFieldValidator } from './createFieldValidator.js'
+import { createFieldTemplate } from './createFieldTemplate.js'
 import { attachCommitBehavior } from './attachCommitBehavior.js'
 
 /**
@@ -10,17 +10,8 @@ import { attachCommitBehavior } from './attachCommitBehavior.js'
  * @returns {HTMLElement} A labeled input field with validation and commit-on-Enter/blur behavior.
  */
 export function createTextField(property, currentValue, onChange) {
-  const field = document.createElement('div')
-  field.className = 'property-field'
+  const { field, label, input, error, validate } = createFieldTemplate(property)
 
-  const label = document.createElement('label')
-  label.textContent = property.label
-
-  const validate = createFieldValidator(property)
-  const error = document.createElement('span')
-  error.className = 'field-error'
-
-  const input = document.createElement('input')
   input.type = 'text'
   input.value = currentValue
 

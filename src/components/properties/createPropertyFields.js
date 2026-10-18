@@ -27,6 +27,9 @@ export function createPropertyFields() {
 
 /**
  * Clears the container and creates a field for each editable property of the component.
+ *
+ * @param {HTMLElement} container - The container element.
+ * @param {object} component - Component with editable properties.
  */
 function renderFields(container, component) {
   container.replaceChildren()

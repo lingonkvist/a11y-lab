@@ -55,8 +55,6 @@ input[data-error] {
 }
 
 .field-error {
-  display: flex;
-  justify-content: center;
   font-size: var(--text-micro);
   font-weight: var(--weight-medium);
   color: var(--failure-11);

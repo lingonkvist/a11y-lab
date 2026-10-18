@@ -1,4 +1,4 @@
-import { createFieldValidator } from './createFieldValidator.js'
+import { createFieldTemplate } from './createFieldTemplate.js'
 import { attachCommitBehavior } from './attachCommitBehavior.js'
 
 /**
@@ -10,15 +10,7 @@ import { attachCommitBehavior } from './attachCommitBehavior.js'
  * @returns {HTMLElement} A labeled input field with validation and commit-on-Enter/blur behavior.
  */
 export function createColorField(property, currentValue, onChange) {
-  const field = document.createElement('div')
-  field.className = 'property-field'
-
-  const label = document.createElement('label')
-  label.textContent = property.label
-
-  const validate = createFieldValidator(property)
-  const error = document.createElement('span')
-  error.className = 'field-error'
+  const { field, label, input: textInput, error, validate } = createFieldTemplate(property)
 
   const colorInput = document.createElement('input')
   colorInput.type = 'color'
@@ -28,16 +20,18 @@ export function createColorField(property, currentValue, onChange) {
     onChange(colorInput.value)
   })
 
-  const textInput = document.createElement('input')
   textInput.type = 'text'
   textInput.value = currentValue
   attachCommitBehavior({
-    input: textInput, error, validate, onChange: (value => {
+    input: textInput,
+    error,
+    validate,
+    onChange: (value) => {
       if (/^#[0-9a-f]{6}$/i.test(value)) {
         colorInput.value = value
       }
       onChange(value)
-    })
+    },
   })
 
   const inputGroup = document.createElement('div')
