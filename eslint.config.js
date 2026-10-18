@@ -22,6 +22,7 @@ export default [
           publicOnly: true,
           checkGetters: false,
           checkSetters: false,
+          ignores: ['lib/'],
         },
       ],
     },
