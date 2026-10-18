@@ -3,6 +3,9 @@ import prettier from 'eslint-config-prettier'
 
 export default [
   ...config,
+  {
+    ignores: ['lib/'],
+  },
   prettier,
   {
     settings: {
@@ -22,7 +25,6 @@ export default [
           publicOnly: true,
           checkGetters: false,
           checkSetters: false,
-          ignores: ['lib/'],
         },
       ],
     },
