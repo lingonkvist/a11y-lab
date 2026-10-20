@@ -91,11 +91,6 @@ input[data-error] {
   padding: var(--space-4);
 }
 
-.results-bar {
-  height: 48px;
-  width: 300px;
-}
-
 .panel,
 .canvas-bar,
 .results-bar {
