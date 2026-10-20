@@ -36,15 +36,18 @@ export class ButtonComponent extends Component {
   buildComponent() {
     const button = document.createElement('button')
     button.textContent = this.#text
-    button.style.color = this.foregroundColor
-    button.style.backgroundColor = this.backgroundColor
-    button.style.width = `${this.width}px`
-    button.style.height = `${this.height}px`
-    button.style.border = 'none'
-    button.style.borderRadius = `${this.#borderRadius}px`
-    button.style.fontSize = `${this.#fontSize}px`
-    button.style.fontWeight = `${this.#fontWeight}`
-    button.style.cursor = 'pointer'
+
+    Object.assign(button.style, {
+      color: this.foregroundColor,
+      backgroundColor: this.backgroundColor,
+      width: `${this.width}px`,
+      height: `${this.height}px`,
+      border: 'none',
+      borderRadius: `${this.#borderRadius}px`,
+      fontSize: `${this.#fontSize}px`,
+      fontWeight: `${this.#fontWeight}`,
+      cursor: 'pointer',
+    })
 
     return button
   }

@@ -1,16 +1,15 @@
-import './Canvas.css'
-
 /**
- * Creates and updates the canvas.
+ * Initializes the canvas.
+ *
+ * @param {HTMLElement} main - The main element to use as canvas.
  */
-export function renderCanvas() {
-  const main = document.querySelector('main')
-
-  const render = (e) => {
-    const { component } = e.detail
-    main.replaceChildren(component.buildComponent())
-  }
+export function initCanvas(main) {
+  const render = (e) => main.replaceChildren(e.detail.component.buildComponent())
 
   document.addEventListener('component:select', render)
   document.addEventListener('component:update', render)
+
+  document.addEventListener('canvas:update', (e) => {
+    main.style.backgroundColor = e.detail.color
+  })
 }

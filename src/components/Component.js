@@ -16,7 +16,7 @@ export class Component {
    * @param {number} properties.width - Width in pixels.
    * @param {number} properties.height - Height in pixels.
    */
-  constructor({ foregroundColor, backgroundColor, width, height } = {}) {
+  constructor({ foregroundColor = '#000000', backgroundColor = '#ffffff', width = 100, height = 40 } = {}) {
     this.#foregroundColor = foregroundColor
     this.#backgroundColor = backgroundColor
     this.#width = width

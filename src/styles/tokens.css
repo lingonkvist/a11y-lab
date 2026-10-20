@@ -58,7 +58,8 @@
   /* ============================================================
    * SEMANTIC Surfaces
    * ============================================================ */
-  --surface-canvas: var(--gray-1); /* Default canvas color */
+  --surface-body: var(--gray-1); /* Default canvas color */
+  --surface-canvas: var(--gray-4); /* Default canvas color */
   --surface-panel: var(--gray-2); /* Floating panel bg */
   --surface-input: var(--gray-3); /* Input/button bg inside panels */
   --surface-input-hover: var(--gray-4);
