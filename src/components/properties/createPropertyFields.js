@@ -9,24 +9,24 @@ const fieldBuilders = {
 }
 
 /**
- * Creates a container that renders editable property fields for the selected component.
+ * Creates a wrapper that renders editable property fields for the selected component.
  * Listens for 'component:select' events and rebuilds the fields accordingly.
  *
  * @returns {HTMLElement} A container that updates its fields on component selection.
  */
 export function createPropertyFields() {
-  const container = document.createElement('div')
-  container.className = 'property-fields'
+  const wrapper = document.createElement('div')
+  wrapper.className = 'property-fields'
 
   document.addEventListener('component:select', (e) => {
-    renderFields(container, e.detail.component)
+    renderFields(wrapper, e.detail.component)
   })
 
-  return container
+  return wrapper
 }
 
 /**
- * Clears the container and creates a field for each editable property of the component.
+ * Clears the wrapper and creates a field for each editable property of the component.
  *
  * @param {HTMLElement} container - The container element.
  * @param {object} component - Component with editable properties.

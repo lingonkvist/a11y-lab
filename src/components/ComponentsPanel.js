@@ -8,26 +8,27 @@ const registry = [
 ]
 
 /**
- * Creates a components panel.
+ * Initializes a components panel.
  *
- * @returns {HTMLElement} components panel.
+ * @param {HTMLElement} panel - Panel to initialize.
  */
-export function createComponentPanel() {
-  const fragment = document.createDocumentFragment()
-  fragment.append(createPanelContent(), createPanelFooter())
-
-  return fragment
+export function initComponentPanel(panel) {
+  panel.append(createTitle(), createContent(), createFooter())
 }
 
-function createPanelContent() {
-  const content = document.createElement('div')
-  content.className = 'panel-content'
-
-  const title = document.createElement('div')
+function createTitle() {
+  const title = document.createElement('h2')
   title.className = 'panel-title'
   title.textContent = 'Components'
 
-  content.append(title, createComponentList())
+  return title
+}
+
+function createContent() {
+  const content = document.createElement('div')
+  content.className = 'panel-content'
+
+  content.append(createComponentList())
 
   return content
 }
@@ -39,7 +40,7 @@ function createComponentList() {
   registry.forEach(({ name, Component }) => {
     const li = document.createElement('li')
     li.textContent = name
-    li.addEventListener('pointerdown', () => {
+    li.addEventListener('click', () => {
       ul.querySelector('.active')?.classList.remove('active')
       li.classList.add('active')
 
@@ -54,12 +55,12 @@ function createComponentList() {
   })
 
   const firstItem = ul.querySelector('li')
-  firstItem?.dispatchEvent(new PointerEvent('pointerdown'))
+  firstItem?.click()
 
   return ul
 }
 
-function createPanelFooter() {
+function createFooter() {
   const footer = document.createElement('div')
   footer.className = 'panel-footer'
 

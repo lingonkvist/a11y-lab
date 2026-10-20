@@ -1,12 +1,9 @@
 .components-panel {
-  width: 240px;
   min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--radius-lg);
-  background: var(--surface-panel);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-panel);
+}
+
+.panel-content {
+  padding: var(--space-4);
 }
 
 .components-list {
@@ -35,7 +32,7 @@
 
 .components-list li.active {
   color: var(--text-primary);
-  background-color: var(--gray-3);
+  background-color: var(--surface-input);
 }
 
 .components-list li::before {
@@ -83,21 +80,21 @@
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.components-panel .panel-footer a:hover {
+.panel-footer a:hover {
   color: var(--text-primary);
 }
 
-.components-panel .panel-footer a span {
+.panel-footer a span {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.components-panel .panel-footer a span svg {
+.panel-footer a span svg {
   max-width: 20px;
   max-height: 20px;
 }
 
-.components-panel .panel-footer a span svg path {
+.panel-footer a span svg path {
   fill: currentColor;
 }

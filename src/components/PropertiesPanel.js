@@ -2,19 +2,27 @@ import './PropertiesPanel.css'
 import { createPropertyFields } from './properties/createPropertyFields'
 
 /**
- * Creates a properties panel.
+ * Initializes a properties panel.
  *
- * @returns {HTMLElement} Properties panel.
+ * @param {HTMLElement} panel - Panel to initialize.
  */
-export function createPropertiesPanel() {
-  const panel = document.createElement('div')
-  panel.className = 'panel-content'
+export function initPropertiesPanel(panel) {
+  panel.append(createTitle(), createContent())
+}
 
-  const title = document.createElement('div')
+function createTitle() {
+  const title = document.createElement('h2')
   title.className = 'panel-title'
   title.textContent = 'Properties'
 
-  panel.append(title, createPropertyFields())
+  return title
+}
 
-  return panel
+function createContent() {
+  const content = document.createElement('div')
+  content.className = 'panel-content'
+
+  content.append(createPropertyFields())
+
+  return content
 }
