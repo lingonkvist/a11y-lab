@@ -1,0 +1,50 @@
+.canvas-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-pill);
+}
+
+.swatch-group,
+.recent-group {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.recent-group,
+.color-picker {
+  border-left: 1px solid var(--border-subtle);
+  padding-left: var(--space-4);
+}
+
+.recent-group:empty {
+  display: none;
+}
+
+.swatch,
+.swatch.recent {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+}
+
+.picker-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  border: 1px dashed var(--border-input);
+}
+
+.color-picker-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.swatch.active {
+  outline: 2px solid var(--border-strong);
+}

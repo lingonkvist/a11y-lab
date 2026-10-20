@@ -2,14 +2,21 @@ import './styles/reset.css'
 import './styles/tokens.css'
 import './styles/base.css'
 import './styles/layout.css'
-import { renderCanvas } from './components/Canvas'
-import { createComponentPanel } from './components/ComponentsPanel'
-import { createPropertiesPanel } from './components/PropertiesPanel'
+import { initCanvas } from './components/Canvas.js'
+import { initComponentPanel } from './components/ComponentsPanel.js'
+import { initPropertiesPanel } from './components/PropertiesPanel.js'
+import { initCanvasBar } from './components/CanvasBar.js'
 
-renderCanvas()
-
-const componentsPanel = document.querySelector('.components-panel')
-componentsPanel.append(createComponentPanel())
+const main = document.querySelector('main')
+initCanvas(main)
 
 const propertiesPanel = document.querySelector('.properties-panel')
-propertiesPanel.append(createPropertiesPanel())
+initPropertiesPanel(propertiesPanel)
+
+const canvasBar = document.querySelector('.canvas-bar')
+initCanvasBar(canvasBar)
+
+// Initializes last because it auto-selects the first component on load,
+// dispatching 'component:select', which requires others to be loaded.
+const componentsPanel = document.querySelector('.components-panel')
+initComponentPanel(componentsPanel)
