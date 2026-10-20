@@ -40,6 +40,9 @@ function createSwatchGroup() {
     group.append(swatch)
   })
 
+  const firstSwatch = group.querySelectorAll('.swatch')[1]
+  firstSwatch?.click()
+
   return group
 }
 

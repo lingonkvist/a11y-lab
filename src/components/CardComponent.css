@@ -1,0 +1,23 @@
+.card {
+  overflow: hidden;
+}
+
+.card-image {
+  height: 40%;
+  background-color: var(--gray-11);
+}
+
+.card .wrapper {
+  padding: var(--space-4);
+}
+
+.card-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: var(--leading-tight);
+}
+
+.card-text {
+  font-size: var(--text-base);
+  letter-spacing: var(--leading-base);
+}

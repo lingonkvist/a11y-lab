@@ -1,10 +1,11 @@
 import './ComponentsPanel.css'
-import { ButtonComponent } from './ButtonComponent'
+import { ButtonComponent } from './ButtonComponent.js'
+import { CardComponent } from './CardComponent.js'
 import githubLogoRaw from '../assets/images/github-logo.svg?raw'
 
 const registry = [
   { name: 'Button', Component: ButtonComponent },
-  { name: 'Card', Component: ButtonComponent },
+  { name: 'Card', Component: CardComponent },
 ]
 
 /**

@@ -3,7 +3,7 @@ import fail from '../assets/images/x.svg?raw'
 import { WcagEngine } from 'wcag-engine'
 import './ResultsBar.css'
 
-const wcag = new WcagEngine
+const wcag = new WcagEngine()
 
 /**
  * Initializes a results bar.
@@ -12,7 +12,7 @@ const wcag = new WcagEngine
  */
 export function initResultsBar(bar) {
   let currentComponent = null
-  let currentCanvasColor = '#ffffff'
+  let currentCanvasColor = '#808080'
 
   document.addEventListener('component:select', (e) => {
     currentComponent = e.detail.component
@@ -35,13 +35,28 @@ export function initResultsBar(bar) {
 function buildResults(component, canvasColor) {
   const fragment = document.createDocumentFragment()
 
-  const contrast = wcag.checkContrast(component.foregroundColor, component.backgroundColor, { fontSize: component.fontSize, fontWeight: component.fontWeight })
+  const contrast = wcag.checkContrast(component.foregroundColor, component.backgroundColor, {
+    fontSize: component.fontSize,
+    fontWeight: component.fontWeight,
+  })
   const textLevel = contrast.aaa ? 'AAA' : contrast.aa ? 'AA' : 'Fail'
-  fragment.append(buildPill('Text', { level: textLevel, value: `${contrast.ratio.toFixed(1)}:1`, colors: [component.foregroundColor, component.backgroundColor] }))
+  fragment.append(
+    buildPill('Text', {
+      level: textLevel,
+      value: `${contrast.ratio.toFixed(1)}:1`,
+      colors: [component.foregroundColor, component.backgroundColor],
+    })
+  )
 
   const nonText = wcag.checkNonTextContrast(component.backgroundColor, canvasColor)
   const nonTextLevel = nonText.aa ? 'Pass' : 'Fail'
-  fragment.append(buildPill('Non-text', { level: nonTextLevel, value: `${nonText.ratio.toFixed(1)}:1`, colors: [component.backgroundColor, canvasColor] }))
+  fragment.append(
+    buildPill('Non-text', {
+      level: nonTextLevel,
+      value: `${nonText.ratio.toFixed(1)}:1`,
+      colors: [component.backgroundColor, canvasColor],
+    })
+  )
 
   const target = wcag.checkTargetSize(component.width, component.height)
   const sizeLevel = target.aaa ? 'AAA' : target.aa ? 'AA' : 'Fail'
