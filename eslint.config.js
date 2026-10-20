@@ -1,12 +1,14 @@
-import config from '@lnu/eslint-config'
-import prettier from 'eslint-config-prettier'
+import base from '@lnu/eslint-config'
+import browser from '@lnu/eslint-config/browser'
+import jsdoc from '@lnu/eslint-config/jsdoc'
 
 export default [
-  ...config,
+  ...base,
+  ...browser,
+  ...jsdoc,
   {
     ignores: ['lib/'],
   },
-  prettier,
   {
     settings: {
       jsdoc: {
