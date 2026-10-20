@@ -36,10 +36,12 @@ input[type='number'] {
   left: var(--space-2);
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  border: 1px solid var(--border-input);
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  border: none;
+  outline: 1px solid var(--border-strong);
+  outline-offset: -3px;
   border-radius: var(--radius-sm);
   cursor: pointer;
   appearance: none;
@@ -62,4 +64,17 @@ input[type='number'] {
 .color-input-group input[type='text'] {
   width: 100%;
   padding-left: calc(20px + var(--space-2) + var(--space-2));
+}
+
+.export-button {
+  padding: var(--space-2);
+  margin: var(--space-0) var(--space-4) var(--space-4) var(--space-4);
+  background-color: var(--accent-solid);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  transition: var(--duration-fast) var(--ease-out);
+}
+
+.export-button:hover {
+  background-color: var(--accent-solid-hover);
 }

@@ -84,8 +84,9 @@
   /* ============================================================
    * SEMANTIC Accent (actions, selected states)
    * ============================================================ */
-  --accent-solid: var(--cyan-9);
-  --accent-solid-hover: var(--cyan-10);
+  --accent-solid: var(--cyan-7);
+  --accent-solid-hover: var(--cyan-8);
+  --accent-input: var(--cyan-10);
   --accent-text: var(--cyan-11);
   --focus-ring: var(--cyan-8);
 

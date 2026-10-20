@@ -33,7 +33,7 @@
 .swatch.recent {
   width: 32px;
   height: 32px;
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
 }
 
@@ -41,8 +41,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
-  border: 1px dashed var(--border-input);
+  color: var(--text-primary);
+  border: 1px dashed var(--border-strong);
 }
 
 .swatch {
@@ -54,7 +54,7 @@
 }
 
 .swatch.active {
-  outline: 2px solid var(--accent-solid);
+  outline: 2px solid var(--accent-input);
   outline-offset: 2px;
 }
 
