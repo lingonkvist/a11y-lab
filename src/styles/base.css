@@ -57,7 +57,7 @@ input {
 }
 
 input:focus {
-  outline: 2px solid var(--border-strong);
+  outline: 2px solid var(--focus-ring);
 }
 
 input[data-error] {

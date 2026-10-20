@@ -1,4 +1,5 @@
 import './CanvasBar.css'
+import plusIcon from '../assets/images/plus.svg?raw'
 
 const presets = [
   { label: 'White', value: '#ffffff' },
@@ -81,11 +82,7 @@ function createColorPicker(onRecent) {
   const button = document.createElement('button')
   button.className = 'swatch picker-button'
   button.setAttribute('aria-label', 'Pick custom color')
-  button.innerHTML = `
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-  `
+  button.innerHTML = plusIcon
 
   button.addEventListener('click', () => picker.click())
   picker.addEventListener('input', () => dispatchUpdate(picker.value))

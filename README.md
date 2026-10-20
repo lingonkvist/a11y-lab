@@ -27,3 +27,5 @@ Bug reports and feature requests are welcome via [GitHub Issues](https://github.
 ## License
 
 MIT, see [LICENSE](./LICENSE).
+
+Icons from Lucide (https://lucide.dev).

@@ -23,6 +23,12 @@
   display: none;
 }
 
+.color-picker-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .swatch,
 .swatch.recent {
   width: 32px;
@@ -39,12 +45,20 @@
   border: 1px dashed var(--border-input);
 }
 
-.color-picker-input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+.swatch {
+  transition: var(--duration-fast) var(--ease-out);
+}
+
+.swatch:hover {
+  transform: scale(1.08);
 }
 
 .swatch.active {
-  outline: 2px solid var(--border-strong);
+  outline: 2px solid var(--accent-solid);
+  outline-offset: 2px;
+}
+
+.swatch:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
