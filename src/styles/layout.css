@@ -3,20 +3,35 @@
   grid-template-columns: 240px 1fr 240px;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
-    'left header right'
-    'left main   right'
-    'left footer right';
-  gap: var(--space-4);
-  padding: var(--space-6);
+    'components  canvas-bar  properties'
+    'components  main        properties'
+    'components  results     properties';
+  gap: var(--space-6);
+  padding: var(--space-4);
   min-height: 100vh;
 }
 
 .components-panel {
-  grid-area: left;
+  grid-area: components;
   align-self: center;
 }
 
 .properties-panel {
-  grid-area: right;
+  grid-area: properties;
   align-self: center;
+}
+
+main {
+  grid-area: main;
+  align-self: center;
+}
+
+.canvas-bar {
+  grid-area: canvas-bar;
+  justify-self: center;
+}
+
+.results-bar {
+  grid-area: results;
+  justify-self: center;
 }

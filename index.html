@@ -8,11 +8,11 @@
   </head>
   <body>
     <div id="app">
-      <aside class="components-panel"></aside>
-      <header class="canvas-picker"></header>
+      <section aria-label="Components" class="panel components-panel"></section>
+      <section aria-label="Properties" class="panel properties-panel"></section>
       <main></main>
-      <footer class="results-bar"></footer>
-      <aside class="properties-panel"></aside>
+      <div role="toolbar" aria-label="Canvas background" class="canvas-bar"></div>
+      <section aria-label="WCAG compliance results" class="results-bar"></section>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

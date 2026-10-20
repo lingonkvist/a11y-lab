@@ -35,3 +35,14 @@ img {
   display: block;
   max-width: 100%;
 }
+
+button {
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
