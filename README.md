@@ -4,6 +4,10 @@
 
 a11y lab is a web app for developers and UX designers to build accessible UI components that pass WCAG 2.2. The user selects a component, such as a button or a card, adjusts its colors, typography, and sizing, and sees which specific criteria pass or fail as they edit.
 
+## Live Demo
+
+[a11y-lab.netlify.app](https://a11y-lab.netlify.app/)
+
 ## Requirements
 
 1. The user can select a component, adding it to the canvas.
@@ -16,7 +20,7 @@ a11y lab is a web app for developers and UX designers to build accessible UI com
 8. The user can see target size results live (2.5.5, 2.5.8).
 9. The user can export the component's CSS.
 
-## Installation
+## Local Development
 
 a11y lab depends on [form-validation](https://github.com/Fielifia/form-validation), which must be cloned manually into `lib/form-validation`. All other dependencies install via `npm install`.
 
