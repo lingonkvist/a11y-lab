@@ -80,6 +80,7 @@ function createColorPicker(onRecent) {
   const picker = document.createElement('input')
   picker.className = 'color-picker-input'
   picker.type = 'color'
+  picker.setAttribute('aria-hidden', 'true')
   picker.tabIndex = -1
 
   const button = document.createElement('button')

@@ -14,6 +14,7 @@ export function createColorField(property, currentValue, onChange) {
 
   const colorInput = document.createElement('input')
   colorInput.type = 'color'
+  colorInput.setAttribute('aria-label', `Pick ${property.label.toLowerCase()} color`)
   colorInput.value = currentValue
   colorInput.addEventListener('input', () => {
     textInput.value = colorInput.value

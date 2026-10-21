@@ -81,7 +81,7 @@ input[data-error] {
   font-weight: var(--weight-medium);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
 }
 
 .panel-content {
